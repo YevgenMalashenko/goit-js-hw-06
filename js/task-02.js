@@ -7,25 +7,20 @@ const ingredients = [
   "Condiments",
 ];
 
+// ! Option No.1
+const ingredientsToAdd = ingredients.map((elem) => `<li>${elem}</li>`).join("");
+
 const listEl = document.querySelector("#ingredients");
 
-ingredients.forEach((el) => {
-  const liItem = document.createElement("li");
-  liItem.textContent = el;
-  liItem.classList.add("item");
-  listEl.prepend(liItem);
-});
+listEl.insertAdjacentHTML("beforeend", ingredientsToAdd);
 
-//!  4. После чего вставит все <li> за одну операцию в список ul#ingredients - не удовлетворяет, так как елементі вставляются не за одну операцию
+// ! Option No.2
 
 // const listEl = document.querySelector("#ingredients");
-
-// let liItem;
 
 // ingredients.forEach((el) => {
 //   const liItem = document.createElement("li");
 //   liItem.textContent = el;
 //   liItem.classList.add("item");
+//   listEl.prepend(liItem);
 // });
-
-// listEl.prepend(liItem);
