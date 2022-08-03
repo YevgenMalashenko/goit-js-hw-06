@@ -1,12 +1,15 @@
-const textInput = document.querySelector("#name-input");
+const refs = {
+  textInput: document.querySelector("#name-input"),
+  output: document.querySelector("#name-output"),
+};
 
-const output = document.querySelector("#name-output");
+refs.textInput.addEventListener("input", onInputInput);
 
-textInput.addEventListener("input", displayName);
-
-function displayName(event) {
+function onInputInput(event) {
   if (event.currentTarget.value === "") {
-    output.textContent = "Anonymous";
+    refs.output.textContent = "Anonymous";
   }
-  output.textContent = event.currentTarget.value;
+  refs.output.textContent = event.currentTarget.value;
 }
+
+// ! при перезагрузке страницы не очищается поле инпута....

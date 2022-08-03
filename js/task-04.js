@@ -10,14 +10,14 @@ console.log(incButton);
 
 decButton.addEventListener("click", reduceCounterValue);
 
+incButton.addEventListener("click", increaseCounterValue);
+
 function reduceCounterValue() {
   counterValue -= 1;
-  displayCounterValue.innerHTML = `${counterValue}`;
+  displayCounterValue.textContent = counterValue;
 }
-
-incButton.addEventListener("click", increaseCounterValue);
 
 function increaseCounterValue() {
   counterValue += 1;
-  displayCounterValue.innerHTML = `${counterValue}`;
+  displayCounterValue.textContent = counterValue;
 }
