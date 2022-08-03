@@ -13,7 +13,9 @@ function onFormSubmit(event) {
   const email = formElements.email.value;
   const password = formElements.password.value;
 
-  if (email === "" || password === "");
+  if (email === "" || password === "") {
+    alert("Enter All Fields");
+  }
 
   const formData = {
     email,

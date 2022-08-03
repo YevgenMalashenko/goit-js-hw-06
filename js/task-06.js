@@ -2,13 +2,20 @@ const inputElementForm = document.querySelector("#validation-input");
 
 console.log(inputElementForm);
 
+console.log(Number(inputElementForm.dataset.length));
+
 inputElementForm.addEventListener("blur", handleInputBlur);
 
 function handleInputBlur(event) {
-  console.log(event.currentTarget.value);
-  if (event.currentTarget.value.length === 6) {
+  console.log(event.currentTarget.value.length);
+
+  if (
+    event.currentTarget.value.length === Number(inputElementForm.dataset.length)
+  ) {
+    inputElementForm.classList.remove("invalid");
     inputElementForm.classList.add("valid");
   } else {
+    inputElementForm.classList.remove("valid");
     inputElementForm.classList.add("invalid");
   }
 }

@@ -6,10 +6,11 @@ const refs = {
 refs.textInput.addEventListener("input", onInputInput);
 
 function onInputInput(event) {
+  refs.output.textContent = event.currentTarget.value;
+
   if (event.currentTarget.value === "") {
     refs.output.textContent = "Anonymous";
   }
-  refs.output.textContent = event.currentTarget.value;
 }
 
 // ! при перезагрузке страницы не очищается поле инпута....
