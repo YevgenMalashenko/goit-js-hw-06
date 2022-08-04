@@ -12,14 +12,16 @@ function handleInputBlur(event) {
   if (
     event.currentTarget.value.length === Number(inputElementForm.dataset.length)
   ) {
-    inputElementForm.classList.remove("invalid");
+    if (inputElementForm.classList.contains("invalid")) {
+      inputElementForm.classList.remove("invalid");
+    }
     inputElementForm.classList.add("valid");
   } else {
-    inputElementForm.classList.remove("valid");
+    if (inputElementForm.classList.contains("valid")) {
+      inputElementForm.classList.remove("valid");
+    }
     inputElementForm.classList.add("invalid");
   }
 }
-
-// ! когда ввожу 6 символов, поле формы становится зеленым, а если 7 символо - красным. НО!!! когда удаляю
 
 // ! как назвать колбек функцию если все предыдущие функции низываются по принципу onSubjectEvent? onInputElementFormInput???
